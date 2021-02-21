@@ -43,7 +43,7 @@ a {
 
 #main-header {
   width: 100%;
-  height: 5vh;
+  padding: 2vh 0;
   display: flex;
   align-items: center;
   font-weight: 400;
@@ -51,22 +51,24 @@ a {
   color: var(--text-color);
 }
 
-#main-header nav {
+#main-header nav,
+#main-header ul {
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   padding: 0 3%;
+  /* border: 1px solid gray; */
 }
 
-#main-header ul {
-  display: flex;
-  margin: 0 auto;
+#main-header div {
+  margin-bottom: 1rem;
 }
 
 #main-header li {
   list-style-type: none;
-  margin-right: 3rem;
+  /* margin-right: 3rem; */
   transition: border-bottom 0.3s ease-out;
   border-bottom: 2px solid transparent;
 }
@@ -79,6 +81,7 @@ a {
   color: var(--text-color);
   transition: color 0.3s ease-out;
   font-family: 'Roboto Slab', serif;
+  font-size: 1.5rem;
 }
 
 #main-header a:hover {
@@ -90,10 +93,11 @@ a {
 }
 
 #main-header div {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   flex: 1;
 }
+
 
 /* hero section */
 
@@ -369,6 +373,28 @@ footer .wrapper {
 /* media queries */
 
 @media (min-width: 720px) {
+  /* navbar */
+  #main-header nav, 
+  #main-header nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center ;
+  }
+
+  #main-header nav ul {
+    max-width: 30%;
+    padding: 0;
+  }
+
+  #main-header nav li:first-child {
+    margin-right: 10%;
+  }
+
+  #main-header div {
+    font-size: 2rem;
+    margin: 0;
+  }
+
   /* gallery section */
 
   .portfolio {
